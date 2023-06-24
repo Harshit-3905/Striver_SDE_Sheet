@@ -1,1 +1,0 @@
-{"name":"Local: Dulplicate_Number","url":"h:\\Striver_SDE_Sheet\\Dulplicate_Number.java","tests":[{"id":1687488783119,"input":"5\n1 3 4 2 2","output":"2"},{"id":1687488826480,"input":"5\n3 1 3 4 2","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"h:\\Striver_SDE_Sheet\\Dulplicate_Number.java","group":"local","local":true}
