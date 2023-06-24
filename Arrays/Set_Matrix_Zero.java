@@ -19,6 +19,7 @@ class Set_Matrix_Zero {
             }
             System.out.println();
         }
+        in.close();
     }
 
     // Time Complexity : O(n^2)

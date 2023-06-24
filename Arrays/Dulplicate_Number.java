@@ -11,6 +11,7 @@ class Dulplicate_Number {
         // int ans = Approach_1(a, n);
         int ans = Approach_2(a, n);
         System.out.println(ans);
+        in.close();
     }
 
     // Time Complexity : O(n)
