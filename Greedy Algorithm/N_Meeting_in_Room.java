@@ -1,5 +1,6 @@
 import java.util.*;
 
+// Time Complexity : O(nlogn) 
 class N_Meeting_in_Room {
     public static void main(String[] args) throws java.lang.Exception {
         Scanner in = new Scanner(System.in);
