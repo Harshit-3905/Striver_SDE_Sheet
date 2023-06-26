@@ -1,0 +1,1 @@
+{"name":"Local: N_Meeting_in_Room","url":"h:\\Striver_SDE_Sheet\\Greedy Algorithm\\N_Meeting_in_Room.java","tests":[{"id":1687751756271,"input":"6\n1 3 0 5 8 5\n2 4 6 7 9 9","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"h:\\Striver_SDE_Sheet\\Greedy Algorithm\\N_Meeting_in_Room.java","group":"local","local":true}
