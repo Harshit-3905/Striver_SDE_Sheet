@@ -10,9 +10,9 @@ class Subset {
         for (int i = 0; i < n; i++)
             a[i] = in.nextInt();
         ans = new HashSet<>();
-        Solution1(a, n);
+        // Solution1(a, n);
         ArrayList<Integer> list = new ArrayList<>();
-        // Solution2(a, n, 0, list);
+        Solution2(a, n, 0, list);
         for (ArrayList<Integer> x : ans) {
             for (int y : x) {
                 System.out.print(y + " ");
