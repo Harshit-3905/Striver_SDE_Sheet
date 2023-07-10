@@ -19,10 +19,10 @@ class Rabin_Karp {
         long cnt = 0;
 
         long hash_t2 = hash(pat, mod1, 31);
+        long hash_t2_new = hash(pat, mod2, 37);
 
         long hash_t1 = hash(s.substring(0, m), mod1, 31);
         long hash_t1_new = hash(s.substring(0, m), mod2, 37);
-        long hash_t2_new = hash(pat, mod2, 37);
 
         if (hash_t1 == hash_t2 && hash_t1_new == hash_t2_new)
             cnt++;
