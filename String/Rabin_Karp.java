@@ -1,6 +1,9 @@
 // Used to Search Pattern in a Given Text 
 
 class Rabin_Karp {
+    static int mod1 = 1000000007;
+    static int mod2 = 1000000009;
+
     static long hash(String s, long mod_new, long p) {
         long h = 0;
 
