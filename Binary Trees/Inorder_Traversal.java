@@ -11,8 +11,8 @@ class Inorder_Traversal {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
         List<Integer> list = new ArrayList<>();
-        // Solution1(root, list);
-        Solution2(root, list);
+        Solution1(root, list);
+        // Solution2(root, list);
         for (int x : list)
             System.out.print(x + " ");
         in.close();
@@ -21,15 +21,17 @@ class Inorder_Traversal {
     // Stack
     static void Solution1(Node root, List<Integer> list) {
         Stack<Node> s = new Stack<>();
-        s.push(root);
         Node curr = root;
-        while (!s.isEmpty()) {
-            if (curr.left != null) {
-                s.push(curr.left);
+        while (true) {
+            if (curr != null) {
+                s.push(curr);
                 curr = curr.left;
             } else {
-                list.add(curr.val);
+                if (s.isEmpty())
+                    break;
                 curr = s.pop();
+                list.add(curr.val);
+                curr = curr.right;
             }
         }
     }
