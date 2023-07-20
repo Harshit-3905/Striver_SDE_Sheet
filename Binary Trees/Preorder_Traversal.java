@@ -11,24 +11,28 @@ class Preorder_Traversal {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
         List<Integer> list = new ArrayList<>();
-        // Solution1(root, list);
-        Solution2(root, list);
+        Solution1(root, list);
+        // Solution2(root, list);
         for (int x : list)
             System.out.print(x + " ");
         in.close();
     }
 
     // Stack
-    static void Solution(Node root, List<Integer> list) {
+    static void Solution1(Node root, List<Integer> list) {
+        Node curr = root;
+        if (curr == null)
+            return;
         Stack<Node> s = new Stack<>();
-        s.push(root);
+        s.push(curr);
         while (!s.isEmpty()) {
-            Node curr = s.peek();
-            if (curr.left != null) {
-                s.push(curr.left);
-            } else {
-                list.add(curr.val);
-            }
+            Node topNode = s.peek();
+            list.add(topNode.val);
+            s.pop();
+            if (topNode.right != null)
+                s.push(topNode.right);
+            if (topNode.left != null)
+                s.push(topNode.left);
         }
     }
 
