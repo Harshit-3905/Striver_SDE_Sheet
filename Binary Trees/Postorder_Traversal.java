@@ -11,23 +11,37 @@ class Postorder_Traversal {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
         List<Integer> list = new ArrayList<>();
-        // Solution1(root, list);
-        Solution2(root, list);
+        Solution1(root, list);
+        // Solution2(root, list);
         for (int x : list)
             System.out.print(x + " ");
         in.close();
     }
 
     // Stack
-    static void Solution(Node root, List<Integer> list) {
-        Stack<Node> s = new Stack<>();
-        s.push(root);
-        while (!s.isEmpty()) {
-            Node curr = s.peek();
-            if (curr.left != null) {
-                s.push(curr.left);
+    static void Solution1(Node root, List<Integer> list) {
+        Node curr = root;
+        if (curr == null)
+            return;
+        Stack<Node> st = new Stack<>();
+        while (curr != null || !st.isEmpty()) {
+
+            if (curr != null) {
+                st.push(curr);
+                curr = curr.left;
             } else {
-                list.add(curr.val);
+                Node temp = st.peek().right;
+                if (temp == null) {
+                    temp = st.peek();
+                    st.pop();
+                    list.add(temp.val);
+                    while (!st.isEmpty() && temp == st.peek().right) {
+                        temp = st.peek();
+                        st.pop();
+                        list.add(temp.val);
+                    }
+                } else
+                    curr = temp;
             }
         }
     }
