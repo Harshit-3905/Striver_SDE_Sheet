@@ -67,19 +67,19 @@ class Subset_Sum {
     // Space Complexity : O(n*totalSum)
     static boolean Tabulation(int nums[], int totalSum) {
         int n = nums.length;
-        boolean dp[][] = new boolean[n][(totalSum / 2) + 1];
-        for (int i = 0; i < n; i++)
+        boolean dp[][] = new boolean[n + 1][(totalSum / 2) + 1];
+        for (int i = 0; i <= n; i++)
             dp[i][0] = true;
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= totalSum / 2; j++) {
                 boolean notTake = dp[i - 1][j];
                 boolean take = false;
-                if (j >= nums[i])
-                    take = dp[i - 1][j - nums[i]];
+                if (j >= nums[i - 1])
+                    take = dp[i - 1][j - nums[i - 1]];
                 dp[i][j] = take | notTake;
             }
         }
-        return dp[n - 1][totalSum / 2];
+        return dp[n][totalSum / 2];
     }
 
     // Time Complexity : O(n*totalSum)
