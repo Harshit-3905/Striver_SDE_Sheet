@@ -2,11 +2,6 @@ import java.util.*;
 
 class Clone_Graph {
 
-    public static void main(String[] args) throws java.lang.Exception {
-        Scanner in = new Scanner(System.in);
-        in.close();
-    }
-
     public Node cloneGraph(Node node) {
         if (node == null)
             return null;
