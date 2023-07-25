@@ -18,7 +18,7 @@ class Knapsack {
                 dp[i][j] = -1;
         }
         // int ans = Memoization(wt, val, n - 1, W, dp);
-        // int ans = Tabulation(wt, val, n - 1, W);
+        // int ans = Tabulation(wt, val, n - 1, W);Harshit@3905
         // int ans = Space_Optimised(wt, val, n - 1, W);
         int ans = Space_Optimised1(wt, val, n - 1, W);
         System.out.println(ans);
