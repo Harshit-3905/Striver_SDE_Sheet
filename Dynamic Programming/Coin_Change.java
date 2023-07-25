@@ -16,7 +16,8 @@ class Coin_Change {
         }
         // int ans = Memoization(n - 1, coins, amount, dp);
         // int ans = Tabulation(coins, amount);
-        int ans = Space_Optimised(coins, amount);
+        // int ans = Space_Optimised(coins, amount);
+        int ans = Space_Optimised1(coins, amount);
         System.out.println(ans);
         in.close();
     }
@@ -102,4 +103,27 @@ class Coin_Change {
             return -1;
     }
 
+    static int Space_Optimised1(int coins[], int amount) {
+        int n = coins.length;
+        int curr[] = new int[amount + 1];
+        for (int i = 0; i <= amount; i++) {
+            if (i % coins[0] == 0)
+                curr[i] = i / coins[0];
+            else
+                curr[i] = 1000000000;
+        }
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j <= amount; j++) {
+                int nottake = curr[j];
+                int take = 1000000000;
+                if (j >= coins[i])
+                    take = 1 + curr[j - coins[i]];
+                curr[j] = Math.min(take, nottake);
+            }
+        }
+        if (curr[amount] != 1000000000)
+            return curr[amount];
+        else
+            return -1;
+    }
 }
