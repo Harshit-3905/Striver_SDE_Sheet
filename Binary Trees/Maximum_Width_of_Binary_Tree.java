@@ -1,5 +1,7 @@
 import java.util.*;
 
+import javax.swing.tree.TreeNode;
+
 class Maximum_Width_of_Binary_Tree {
     public static void main(String[] args) throws java.lang.Exception {
         Scanner in = new Scanner(System.in);
@@ -17,26 +19,28 @@ class Maximum_Width_of_Binary_Tree {
     // Time Complexity :O(n)
     // Space Complexity :O(n)
     static int Solution(Node root) {
-        int ans = 0;
-        if (root == null)
-            return 0;
-        Queue<Node> q = new LinkedList<>();
-        q.add(root);
+        Queue<Pair<Node, Integer>> q = new LinkedList<>();
+        q.add(new Pair<>(root, 1));
+        int max = 0;
         while (!q.isEmpty()) {
             int x = q.size();
-            ArrayList<Integer> l = new ArrayList<>();
+            int a = 0, b = 0;
             for (int i = 0; i < x; i++) {
-
-                Node curr = q.poll();
-                l.add(curr.val);
+                Pair<Node, Integer> p = q.poll();
+                Node curr = p.getKey();
+                if (i == 0)
+                    a = p.getValue();
+                if (i == x - 1)
+                    b = p.getValue();
                 if (curr.left != null)
-                    q.add(curr.left);
+                    q.add(new Pair<>(curr.left, 2 * p.getValue()));
                 if (curr.right != null)
-                    q.add(curr.right);
+                    q.add(new Pair<>(curr.right, 2 * p.getValue() + 1));
+
             }
-            ans = Math.max(ans, q.size());
+            max = Math.max(max, b - a + 1);
         }
-        return ans;
+        return max;
     }
 }
 
