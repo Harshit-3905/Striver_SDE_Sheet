@@ -14,9 +14,9 @@ class Minimum_Path_Sum {
         int dp[][] = new int[m][n];
         for (int i = 0; i < m; i++)
             Arrays.fill(dp[i], -1);
-        int ans1 = Recursion(grid, m, n, 0, 0);
-        int ans2 = Memoization(grid, m, n, 0, 0, dp);
-        int ans3 = Tabulation(grid, m, n);
+        // int ans1 = Recursion(grid, m, n, 0, 0);
+        // int ans2 = Memoization(grid, m, n, 0, 0, dp);
+        // int ans3 = Tabulation(grid, m, n);
         int ans4 = Space_Optimised(grid, m, n);
         System.out.println(ans4);
         in.close();
