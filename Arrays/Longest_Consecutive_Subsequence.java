@@ -7,12 +7,14 @@ class Longest_Consecutive_Subsequence {
         int nums[] = new int[n];
         for (int i = 0; i < n; i++)
             nums[i] = in.nextInt();
-        int ans = Solution(nums);
+        // int ans = Solution1(nums);
+        int ans = Solution2(nums);
         System.out.println(ans);
         in.close();
     }
 
-    static int Solution(int[] nums) {
+    // Time Complexity : O(nlogn)
+    static int Solution1(int[] nums) {
         if (nums.length == 0)
             return 0;
         int ans = 1;
@@ -27,6 +29,31 @@ class Longest_Consecutive_Subsequence {
             else
                 curr = 1;
             ans = Math.max(ans, curr);
+        }
+        return ans;
+    }
+
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    static int Solution2(int[] nums) {
+        int n = nums.length;
+        HashSet<Integer> set = new HashSet<>();
+        for (int i = 0; i < n; i++)
+            set.add(nums[i]);
+        int ans = 0;
+        int curr = 0;
+        for (int i = 0; i < n; i++) {
+            if (set.contains(nums[i] - 1))
+                continue;
+            else {
+                int x = nums[i];
+                curr = 0;
+                while (set.contains(x)) {
+                    curr++;
+                    x++;
+                }
+                ans = Math.max(ans, curr);
+            }
         }
         return ans;
     }
