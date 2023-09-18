@@ -3,11 +3,11 @@ class Number_of_Islands {
         int m = grid.length;
         int n = grid[0].length;
         boolean vis[][] = new boolean[m][n];
-        int ans=0;
-        for(int i=0;i<m;i++){
-            for(int j=0;j<n;j++){
-              ā  if(vis[i][j]==false && grid[i][j]=='1'){
-                    backtrack(grid,vis,i,j,m,n);
+        int ans = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (vis[i][j] == false && grid[i][j] == '1') {
+                    backtrack(grid, vis, i, j, m, n);
                     ans++;
                 }
             }
