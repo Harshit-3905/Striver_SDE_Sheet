@@ -1,12 +1,6 @@
 import java.util.*;
 
 class Intersection_of_Two_Linked_List {
-    public static void main(String[] args) throws java.lang.Exception {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-
-        in.close();
-    }
 
     // Time Complexity : O(m+n)
     // Space Complexity : O(m)

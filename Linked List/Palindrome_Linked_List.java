@@ -18,7 +18,7 @@ class Palindrome_Linked_List {
             }
         }
         boolean ans1 = Solution1(head);
-        boolean ans2 = Solution2(head);
+        // boolean ans2 = Solution2(head);
         System.out.println(ans1);
         in.close();
     }

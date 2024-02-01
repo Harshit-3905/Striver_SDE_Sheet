@@ -17,7 +17,7 @@ class Reverse_Linked_List {
                 curr = curr.next;
             }
         }
-        Node ans1 = Iterative(head);
+        // Node ans1 = Iterative(head);
         Node ans2 = Recursive(head);
         while (ans2 != null) {
             System.out.print(ans2.val + " ");
