@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Search_BST {
 
     static Node searchBST(Node root, int val) {
