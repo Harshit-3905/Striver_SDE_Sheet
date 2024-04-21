@@ -29,3 +29,31 @@ class BSTIterator {
         return true;
     }
 }
+
+class BSTIterator1 {
+    Stack<TreeNode> s = new Stack<>();
+
+    public BSTIterator1(TreeNode root) {
+        while (root != null) {
+            s.push(root);
+            root = root.left;
+        }
+    }
+
+    public int next() {
+        TreeNode p = s.pop();
+        int x = p.val;
+        if (p.right != null) {
+            p = p.right;
+            while (p != null) {
+                s.push(p);
+                p = p.left;
+            }
+        }
+        return x;
+    }
+
+    public boolean hasNext() {
+        return !s.isEmpty();
+    }
+}
